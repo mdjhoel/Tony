@@ -1,0 +1,110 @@
+<html>
+
+    <h1>Basic game</h1><br>
+    <p>Use the arrow keys to control Link. <br>
+    Move around and try not to crash into obstacles</p>
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/link.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkright.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkrightrun.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkleft.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkleftrun.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkup.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkuprun.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkdown.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkdownrun.gif">
+    <img src="http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/linkdead.gif">
+    <br>
+    
+    <canvas id="canvas" width="500" height="400">
+    This text is displayed if your browser does not support HTML5 Canvas.
+    </canvas>
+
+    <script>
+
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+        var interval = setInterval(draw, 5);
+        
+        window.addEventListener('keydown',MoveIt,true);
+        
+        var dx = 5;
+        var dy = 5;
+        var x = 100;
+        var y = 100;
+        var WIDTH = 500;
+        var HEIGHT = 400;
+        var stuffDir = "http://www1.ucc.on.ca/GEO/MrHoel/2015/ics4u/game/stuff/";
+        var linkImage = "link.gif";
+        
+        // draw image
+        var img = new Image;
+            img.onload = function(){
+            ctx.drawImage(img,x,y); // Or at whatever offset you like
+        };
+
+        function clear() {
+            ctx.clearRect(0, 0, WIDTH, HEIGHT);
+        }
+        
+        function MoveIt(evt){
+            switch (evt.keyCode) {
+                case 38:  /* Up arrow was pressed */
+                    if (y - dy > 0){
+                        y -= dy;
+                        if (linkImage == "linkuprun.gif") {
+                            linkImage = "linkup.gif";
+                        } else {
+                            linkImage = "linkuprun.gif";
+                        }
+                    }
+                    break;
+                case 40:  /* Down arrow was pressed */
+                    if (y + dy < HEIGHT){
+                        y += dy;
+                        if (linkImage == "linkdownrun.gif") {
+                            linkImage = "linkdown.gif";
+                        } else {
+                            linkImage = "linkdownrun.gif";
+                        }
+                    }
+                    break;
+                case 37:  /* Left arrow was pressed */
+                    if (x - dx > 0){
+                        x -= dx;
+                        if (linkImage == "linkleftrun.gif") {
+                            linkImage = "linkleft.gif";
+                        } else {
+                            linkImage = "linkleftrun.gif";
+                        }
+                    }
+                    break;
+                case 39:  /* Right arrow was pressed */
+                    if (x + dx < WIDTH){
+                        x += dx;
+                        if (linkImage == "linkrightrun.gif") {
+                            linkImage = "linkright.gif";
+                        } else {
+                            linkImage = "linkrightrun.gif";
+                        }
+                    }
+                    break;
+            }
+        }
+
+        function draw() {
+            clear(); // clear the screen for new draw
+
+            // draw outline of game
+            ctx.fillStyle = "white";
+            ctx.strokeStyle = "black";
+
+            // draw image
+            //var img = new Image;
+            //img.onload = function(){
+            //    ctx.drawImage(img,x,y); // Or at whatever offset you like
+            //};
+            img.src = stuffDir + linkImage;
+        }
+
+    </script>
+</html>
