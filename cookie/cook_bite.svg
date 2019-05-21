@@ -1,0 +1,10 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <ellipse ry="225" rx="225" id="svg_1" cy="250" cx="250" stroke-width="1.5" stroke="#000" fill="#d8a16e"/>
+  <ellipse ry="20" rx="19" id="svg_2" cy="144.9375" cx="135.5" stroke-width="1.5" stroke="#000" fill="#7f3f00"/>
+  <ellipse ry="20" rx="19" id="svg_3" cy="138.9375" cx="357.5" stroke-width="1.5" stroke="#000" fill="#7f3f00"/>
+  <ellipse ry="20" rx="19" id="svg_4" cy="249.9375" cx="281.5" stroke-width="1.5" stroke="#000" fill="#7f3f00"/>
+  <ellipse ry="20" rx="19" id="svg_5" cy="366.9375" cx="298.5" stroke-width="1.5" stroke="#000" fill="#7f3f00"/>
+  <ellipse ry="20" rx="19" id="svg_6" cy="299.9375" cx="136.5" stroke-width="1.5" stroke="#000" fill="#7f3f00"/>
+  <ellipse ry="20" rx="19" id="svg_7" cy="87.9375" cx="244.5" stroke-width="1.5" stroke="#000" fill="#7f3f00"/>
+  <ellipse ry="88.5" rx="92.499996" id="svg_8" cy="96.93749" cx="106.999996" stroke-width="1.5" fill="#ffffff"/>
+</svg>

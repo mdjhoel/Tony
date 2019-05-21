@@ -1,0 +1,31 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="cookie.css"/>
+    
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    
+    <table width="100%" style="border:1px solid black;">
+        <tr>
+            <td width="33%" style="border:1px solid black;">
+                <canvas id="mycanvas" style="background-image: url('cook_full.svg')" width="500" height="500"></canvas>
+                <h1>Score:</h1>
+                <p style="font-size: 50" id="score"></p>
+            </td>
+            <td width="33%"></td>
+            <td><div id="store"></div></td>
+        </tr>
+    </table>
+    
+
+    <script src="cookie.js"></script>
+    
+    <audio id="myAudio">
+        <source src="click.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    
+</html>
